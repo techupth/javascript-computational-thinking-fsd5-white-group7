@@ -82,3 +82,17 @@ let orders = [
 ];
 
 // Start coding here
+//find totalAmount of customername "Birdie Shepland"
+let totalBirdie = 0;
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].customerName === "Birdie Shepland") {
+    totalBirdie =
+      totalBirdie + orders[i].productPrice * orders[i].productQuantity;
+  }
+}
+let FormatNumberTotalBirdie = totalBirdie.toLocaleString("en-US");
+console.log(
+  `Total paid amount of Birdie Shepland: ${FormatNumberTotalBirdie} Baht`
+);
+
+//Total paid amount of Birdie Shepland: 379,925 Baht

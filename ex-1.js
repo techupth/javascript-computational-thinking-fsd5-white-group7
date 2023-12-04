@@ -82,3 +82,14 @@ let orders = [
 ];
 
 // Start coding here
+let totalAmount = 0;
+console.log(orders[0].productPrice);
+for (let i = 0; i < orders.length; i++) {
+  totalAmount =
+    totalAmount + orders[i].productPrice * orders[i].productQuantity;
+}
+let totalAmountFormattedAccount = totalAmount.toLocaleString("en-US", {
+  style: "decimal",
+});
+console.log(`Total amount of the orders: ${totalAmountFormattedAccount} Baht`); // Total amount of the orders: 62,255,151 Baht
+//console.log(new Intl.NumberFormat().format(totalAmount)); >>>'62,255,151'

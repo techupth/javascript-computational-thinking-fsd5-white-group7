@@ -82,3 +82,19 @@ let orders = [
 ];
 
 // Start coding here
+//หาชื่อของสินค้าที่มีราคาต่อชิ้นสูงที่สุดใน orders และนำชื่อสินค้านั้นมาแสดงผลบนหน้าจอ Console
+let mostExpensive = 0;
+let ProductMostExpensive = "";
+for (let i = 0; i < orders.length; i++) {
+  if (mostExpensive < orders[i].productPrice) {
+    mostExpensive = orders[i].productPrice;
+  }
+}
+for (let i = 0; i < orders.length; i++) {
+  if (mostExpensive === orders[i].productPrice) {
+    ProductMostExpensive = orders[i].productName;
+  }
+}
+console.log(ProductMostExpensive);
+console.log(`The most expensive product in orders: ${ProductMostExpensive}`);
+//The most expensive product in orders: Wine - Red, Harrow Estates, Cab
