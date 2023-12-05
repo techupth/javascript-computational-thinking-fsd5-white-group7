@@ -81,4 +81,44 @@ let orders = [
   },
 ];
 
-// Start coding here
+// // Start coding here
+// let totalpaid = 0;
+// let maxNumber = orders[0];
+// for (let i = 0; i < orders.length; i++) {
+//   let currentOrder = orders[i];
+//   if (currentOrder[i] > maxNumber) {
+//     maxNumber = totalpaid[i];
+//   }
+// }
+// console.log(
+//   `The most expensive product in orders: (${totalpaid.toLocaleString()} Baht)`
+// );
+
+//สร้างtotalpaid=0เตรียมแทนค่า
+//hint1 productPrice: 922100,
+//ทำให้คอมหาproductpriceเจอ
+let mostExpensiveProduct;
+let maxProductPrice = 0;
+
+// Use a for loop to iterate through each order
+for (let i = 0; i < orders.length; i++) {
+  let currentOrder = orders[i];
+  //console.log(`รอบที่ ${i + 1}`);
+
+  // Calculate the total price for the current product
+  let totalPrice = currentOrder.productPrice;
+  //console.log(`totalPrice = ${totalPrice}`);
+
+  // Check if the total price is greater than the current maximum price
+  //console.log(
+  //`ถ้า totalPrice = = ${totalPrice} > มากกว่า maxProductPrice = ${maxProductPrice}`
+  //);
+  if (totalPrice > maxProductPrice) {
+    maxProductPrice = totalPrice;
+    console.log(maxProductPrice);
+    mostExpensiveProduct = currentOrder.productName;
+  }
+}
+
+// Display the most expensive product in the console
+console.log(`The most expensive product in orders: ${mostExpensiveProduct}`);

@@ -80,5 +80,14 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
-
+// console.log(orders[9].productPrice * orders[9].productQuantity)
 // Start coding here
+let totalOrderAmount = 0;
+for (let i = 0; i < orders.length; i++) {
+  let order = orders[i];
+  // console.log("แต่ละออเดอร์" + orders[i].id);
+  totalOrderAmount += order.productPrice * order.productQuantity;
+}
+console.log(
+  `Total amount of the orders: ${totalOrderAmount.toLocaleString()} Baht`
+);
